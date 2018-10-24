@@ -33,8 +33,8 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 
 RUN apt-get -y install vim zsh
 RUN apt-get -y install sudo
-RUN apt-get install usbutils
-RUN apt-get install python-jinja2
+RUN apt-get -y install usbutils
+RUN apt-get -y install python-jinja2
 
 #RUN sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 #agent
