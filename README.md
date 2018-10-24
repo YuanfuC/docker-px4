@@ -10,6 +10,15 @@ git clone https://github.com/YuanfuC/docker-px4.git
 ```
 
 ## 准备工作
+### 安装 docker 
+[Linux Ubuntu 安装] (https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+
+```bash
+#也可以尝试快速安装
+sudo apt-get install docker.io
+```
+[Mac OS](https://docs.docker.com/docker-for-mac/install/)
+
 ### 添加 GCC 安装包
 [下载地址](https://releases.linaro.org/archive/14.11/components/toolchain/binaries/arm-linux-gnueabihf/) ,依赖包名：
 
