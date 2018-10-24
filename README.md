@@ -1,4 +1,4 @@
-# docker-px4
+# Docker-px4
 Build docker image for px4 Firmware build-environment 
 
 ## Clone 项目
@@ -53,7 +53,7 @@ MD5 (qualcomm_hexagon_sdk_lnx_3_0_eval.bin) = e34b3b169386476dfa14b5b5c9f1a7be
 MD5 (qrl_sdk.tar.gz) = 29831315954479ebfbcd6492feab1a07
 ```
 
-## 创建 docker image 
+## 生成 docker 镜像
 
 ```bash
 
@@ -64,16 +64,26 @@ docker build -t px4 .
 ```
 
 ## 创建 docker 容器
-
+ **注意**: 共享文件目录：主机中 `/home/$USER/workspace` 与 docker 中的 `/home/px4/workspace` 目录共享
+ 
 ```bash
 
-docker run -it --privileged -v /vagrant:/home/px4/workspace -v /dev/bus/usb:/dev/bus/usb --name=opx4 -p 33789:22 -d px4
+docker run -it --privileged -v /home/$USER/workspace:/home/px4/workspace -v /dev/bus/usb:/dev/bus/usb --name=opx4 -p 33789:22 -d px4
 
 ```
 
-## 进入 Docker
+## 进入 docker 容器
 
 ```
 ssh px4@127.0.0.1 -p 33789
 ```
+## 非首次启动过
+主机重启之后不用再重新 `docker build` 生成镜像 ，也不用重新 `docker run` 创建容器，只用重启已经存在的容器即可 
+
+```bash
+docker start opx4 
+```
+
+启动成功后直接进入 docker 即可
+
 
