@@ -23,36 +23,36 @@ apt-get update -y
 apt-get install git zip qtcreator cmake build-essential genromfs ninja-build -y
 # Required python packages
 apt-get install python-argparse python-empy python-toml python-numpy python-dev python-pip -y
-pip install --upgrade pip
+#pip install --upgrade pip
 pip install pandas jinja2 pyserial
 # optional python tools
 pip install pyulog
 
 # Install FastRTPS 1.5.0 and FastCDR-1.0.7
-fastrtps_dir=$HOME/eProsima_FastRTPS-1.5.0-Linux
-echo "Installing FastRTPS to: $fastrtps_dir"
-if [ -d "$fastrtps_dir" ]
-then
-    echo " FastRTPS already installed."
-else
-    pushd .
-    cd ~
-    wget http://www.eprosima.com/index.php/component/ars/repository/eprosima-fast-rtps/eprosima-fast-rtps-1-5-0/eprosima_fastrtps-1-5-0-linux-tar-gz -O eprosima_fastrtps-1-5-0-linux.tar.gz
-    tar -xzf eprosima_fastrtps-1-5-0-linux.tar.gz eProsima_FastRTPS-1.5.0-Linux/
-    tar -xzf eprosima_fastrtps-1-5-0-linux.tar.gz requiredcomponents
-    tar -xzf requiredcomponents/eProsima_FastCDR-1.0.7-Linux.tar.gz
-    cpucores=$(( $(lscpu | grep Core.*per.*socket | awk -F: '{print $2}') * $(lscpu | grep Socket\(s\) | awk -F: '{print $2}') ))
-    cd eProsima_FastCDR-1.0.7-Linux; ./configure --libdir=/usr/lib; make -j$cpucores; make install
-    cd ..
-    cd eProsima_FastRTPS-1.5.0-Linux; ./configure --libdir=/usr/lib; make -j$cpucores; make install
-    cd ..
-    rm -rf requiredcomponents eprosima_fastrtps-1-5-0-linux.tar.gz
-    popd
-fi
+#fastrtps_dir=$HOME/eProsima_FastRTPS-1.5.0-Linux
+#echo "Installing FastRTPS to: $fastrtps_dir"
+#if [ -d "$fastrtps_dir" ]
+#then
+#    echo " FastRTPS already installed."
+#else
+#    pushd .
+#    cd ~
+#    wget http://www.eprosima.com/index.php/component/ars/repository/eprosima-fast-rtps/eprosima-fast-rtps-1-5-0/eprosima_fastrtps-1-5-0-linux-tar-gz -O eprosima_fastrtps-1-5-0-linux.tar.gz
+#    tar -xzf eprosima_fastrtps-1-5-0-linux.tar.gz eProsima_FastRTPS-1.5.0-Linux/
+#    tar -xzf eprosima_fastrtps-1-5-0-linux.tar.gz requiredcomponents
+#    tar -xzf requiredcomponents/eProsima_FastCDR-1.0.7-Linux.tar.gz
+#    cpucores=$(( $(lscpu | grep Core.*per.*socket | awk -F: '{print $2}') * $(lscpu | grep Socket\(s\) | awk -F: '{print $2}') ))
+#    cd eProsima_FastCDR-1.0.7-Linux; ./configure --libdir=/usr/lib; make -j$cpucores; make install
+#    cd ..
+#    cd eProsima_FastRTPS-1.5.0-Linux; ./configure --libdir=/usr/lib; make -j$cpucores; make install
+#    cd ..
+#    rm -rf requiredcomponents eprosima_fastrtps-1-5-0-linux.tar.gz
+#    popd
+#fi
 
 # jMAVSim simulator dependencies
-echo "Installing jMAVSim simulator dependencies"
-apt-get install ant openjdk-8-jdk openjdk-8-jre -y
+#echo "Installing jMAVSim simulator dependencies"
+#apt-get install ant openjdk-8-jdk openjdk-8-jre -y
 
 ## Clone PX4/Firmware
 #clone_dir=~/src
