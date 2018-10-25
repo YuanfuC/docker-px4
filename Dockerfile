@@ -70,6 +70,7 @@ RUN echo 'export HEXAGON_SDK_ROOT=/home/px4/Qualcomm/Hexagon_SDK/3.0' >> ~/.bash
 RUN echo 'export HEXAGON_TOOLS_ROOT=/home/px4/Qualcomm/HEXAGON_Tools/7.2.12/Tools' >> ~/.bashrc
 RUN echo 'export HEXAGON_ARM_SYSROOT=/home/px4/Qualcomm/qrl_sdk/sysroots/eagle8074' >> ~/.bashrc
 RUN echo 'export ARM_CROSS_GCC_ROOT=/home/px4/Qualcomm/ARM_Tools/gcc-4.9-2014.11' >> ~/.bashrc
+RUN mkdir /home/px4/workspace
 
 USER root
 
