@@ -35,6 +35,7 @@ RUN apt-get -y install vim zsh
 RUN apt-get -y install sudo
 RUN apt-get -y install usbutils
 RUN apt-get -y install python-jinja2
+RUN apt-get -y install android-tools-adb
 
 #RUN sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 #agent
