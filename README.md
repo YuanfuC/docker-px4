@@ -77,6 +77,21 @@ docker run -it --privileged -v /home/$USER/workspace:/home/px4/workspace -v /dev
 ```
 ssh px4@127.0.0.1 -p 33789
 ```
+**注意**: 出现 'authenticity' 提示：
+
+```
+Are you sure you want to continue connecting (yes/no)?
+```
+输入 'yes'继续。
+
+**注意**: 出现 'password' 提示：
+
+```
+px4@127.0.0.1's password:
+```
+默认密码 'px4'
+
+
 ## 非首次启动过
 主机重启之后不用再重新 `docker build` 生成镜像 ，也不用重新 `docker run` 创建容器，只用重启已经存在的容器即可 
 
